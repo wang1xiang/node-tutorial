@@ -10,7 +10,7 @@ let transporter = nodemailer.createTransport({
   secure: true, // true for 465, false for other ports
   auth: {
     user: '756638369@qq.com',
-    pass: 'ahyunqgrphjjbaia' // smtp 验证码
+    pass: 'dwhalqagcjlobbei' // smtp 验证码
   }
 })
 
