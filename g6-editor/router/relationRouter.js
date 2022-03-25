@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const request = require('request')
 const relationModel = require('../db/model/relationView')
 const deviceModel = require('../db/model/device')
 
@@ -16,9 +17,28 @@ router.post('/addRelation', (req, res) => {
     })
 })
 
-router.post('/getRelation', (req, res) => {
+router.post('/getModelRelationships', (req, res) => {
   
-  res.send({ errorCode: 0, message: '添加成功', responseBody: ['Tomcat', 'Windows'] })
+  let { modelId } = req.body
+  const url = 'http://192.168.2.32:8080/ops/cmdb/model/getModelRelationships';
+  request({
+    url,
+    method: 'POST',
+    json: true,
+    headers: {
+      'content-type': 'application/json',
+      token: '852213cc70ae44de87b1f8d166eeb65d'
+    },
+    body: {
+      modelId
+    }
+  }, (error, response, body) => {
+    if (!error && response.statusCode === 200) {
+      res.send(({ errorCode: 0, message: '查询成功', responseBody: body.responseBody }))
+    } else {
+      res.send({ errorCode: -1, message: error })
+    }
+  })
 })
 
 router.post('/getRelationById', (req, res) => {

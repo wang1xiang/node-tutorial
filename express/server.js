@@ -1,11 +1,13 @@
 const express = require('express')
 const fs = require('fs')
+const http = require('https')
+var cors = require('cors')
 const bodyParser = require('body-parser')
 var app = express()
 
 // 解析表单数据
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(cors())
 // 解析json数据
 app.use(bodyParser.json())
 app.get('/user/login', (req, res) => {
@@ -53,7 +55,23 @@ app.post('/user/reg', (req, res) => {
 //   })
 // })
 
-
+app.post('/system/barrage', (req, res) => {
+  const url = 'https://chp.shadiao.app/api.php'
+  // http://www.mzitu.com/share/comment-page-
+  http.get(url, resdata => {
+    let rawData = ''
+    // 数据分段 只要接受数据就会触发data chunk每次接受的数据片段
+    resdata.on('data', chunk => {
+      rawData += chunk.toString('utf-8')
+    })
+    resdata.on('end', () => {
+      console.log(rawData)
+      res.send({err: 0, meg: rawData})
+    })
+  }).on('error', err => {
+    console.log('请求错误')
+  })
+})
 app.listen(3000, () => {
   console.log('app listen on port 3000');
 })

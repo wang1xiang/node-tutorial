@@ -38,6 +38,19 @@ router.post('/getTopoModel', (req, res) => {
   })
 })
 
+router.post('/getTopoModelById', (req, res) => {
+
+  const { id } = req.body
+
+  topoModel.find({ id }).then(data => {
+    const topoData = data[0].topoData
+    res.send({ errorCode: 0, message: '查询成功', responseBody: topoData })
+  }).catch(err => {
+    res.send({ errorCode: -1, message: err })
+  })
+})
+
+
 router.post('/deleteTopoModel', (req, res) => {
 
   let { id } = req.body
