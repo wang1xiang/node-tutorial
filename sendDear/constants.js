@@ -13,7 +13,7 @@ const EMAIL_AUTH = {
 //发送者昵称与邮箱地址
 const EMAIL_FROM = '"darling" <wangxiang1324@163.com>';
 //接收者邮箱地
-const EMAIL_TO = "xu132413@163.com";
+const EMAIL_TO = "xufx@cernet.com";
 //邮件主题
 const EMAIL_SUBJECT = "一封暖暖的小邮件";
 
