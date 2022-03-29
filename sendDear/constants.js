@@ -4,22 +4,22 @@ const START_DAY = "2020/6/13";
 const LOCAL = "beijing/beijing";
 
 //发送者邮箱厂家
-const EMAIL_HOST = "smtp.qq.com";
+const EMAIL_HOST = "smtp.163.com";
 //发送者邮箱账户SMTP授权码
 const EMAIL_AUTH = {
-  user: "756638369@qq.com",
-  pass: "dwhalqagcjlobbei"
+  user: "wangxiang1324@163.com",
+  pass: "RCIOKVWPLGBKIYZZ"
 };
 //发送者昵称与邮箱地址
-const EMAIL_FROM = '"darling" <756638369@qq.com>';
+const EMAIL_FROM = '"darling" <wangxiang1324@163.com>';
 //接收者邮箱地
-const EMAIL_TO = "756638369@qq.com";
+const EMAIL_TO = "xu132413@163.com";
 //邮件主题
 const EMAIL_SUBJECT = "一封暖暖的小邮件";
 
 //每日发送时间
-const EMAIL_HOUR = 16;
-const EMAIL_MINUTE= 17;
+const EMAIL_HOUR = 08;
+const EMAIL_MINUTE= 30;
 
 // 爬取数据的url
 const ONE_URL = "http://wufazhuce.com/";

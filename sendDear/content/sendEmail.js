@@ -26,7 +26,7 @@ const sendMail = (HtmlData) => {
   };
   transporter.sendMail(mailOptions, (error, info = {}) => {
     if (error) {
-      sendMail(HtmlData); //再次发送
+      console.log('发送失败', error)
     }
     console.log("静等下一次发送");
   });
