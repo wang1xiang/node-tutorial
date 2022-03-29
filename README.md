@@ -1,6 +1,6 @@
 # node
 
-## [大纲](./readme.html)
+## [大纲](https://wang1xiang.github.io/node-tutorial/readme.html)
 
 ## 是什么
 
