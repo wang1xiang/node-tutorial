@@ -20,8 +20,12 @@ app.use(
 );
 
 
+const testRouter = require('./router/test')
 const analyticsRouter = require('./router/analytics')
+const customerRouter = require('./router/customer')
+app.use('/mockJS/api/testApi', testRouter)
 app.use('/mockJS/api/robotAnalysis', analyticsRouter)
+app.use('/mockJS/api/customerAnalysis', customerRouter)
 
 app.listen(8080, () => {
   console.info("服务启动http://localhost:8080");
