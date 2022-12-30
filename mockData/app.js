@@ -23,9 +23,17 @@ app.use(
 const testRouter = require('./router/test')
 const analyticsRouter = require('./router/analytics')
 const customerRouter = require('./router/customer')
+const campaignRouter = require('./router/campaign');
+const flowRouter = require('./router/flow');
+const imRouter = require('./router/im');
+const reportRouter = require('./router/report');
 app.use('/mockJS/api/testApi', testRouter)
 app.use('/mockJS/api/robotAnalysis', analyticsRouter)
+app.use('/mockJS/node/trigger', flowRouter)
 app.use('/mockJS/api/customerAnalysis', customerRouter)
+app.use('/mockJS/api/compaign', campaignRouter)
+app.use('/mockJS/api/im', imRouter)
+app.use('/mockJS/api/report', reportRouter)
 
 app.listen(8080, () => {
   console.info("服务启动http://localhost:8080");
